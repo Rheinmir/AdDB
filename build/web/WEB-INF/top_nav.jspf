@@ -1,0 +1,25 @@
+<%@page import="model.Profile"%>
+<nav class="container-fluid" id="main-nav-user-home">
+        <div class="row">
+            
+            <div class="col-md-6" id="user-tools-right">
+                <ul>
+                    <li>
+                        <a href="ProcessProfile">
+                            <img class="avatar-small" 
+                             src="${pageContext.servletContext.contextPath}/ProcessImage?emailOrPhone=${sessionScope.user.emailOrPhone}">
+                                 
+                            ${sessionScope.user.firstName}
+                        </a>
+                    </li>
+                    <li><a href="ProcessnNewsFeed">Home </a></li>
+                    
+                    <%if (session.getAttribute("user") !=null) { %>
+                    <li>
+                        <a href="ProcessLogout">Sign out</a>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
